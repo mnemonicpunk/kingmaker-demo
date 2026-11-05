@@ -1,0 +1,614 @@
+{
+  "schema": 1,
+  "demoVersion": "0.1.0-rc.1",
+  "sourceCommit": "8e5f677541895e75f3c150cb9a4edad435aca071",
+  "buildTimestamp": "2026-11-05T10:56:46.000Z",
+  "timestampBasis": "immutable source commit time (SOURCE_DATE_EPOCH)",
+  "toolchain": {
+    "node": "v24.15.0",
+    "npm": "11.12.1",
+    "zlib": "1.3.1-e00f703",
+    "platform": "linux",
+    "arch": "x64"
+  },
+  "lockfile": {
+    "path": "package-lock.json",
+    "sha256": "94b801fdb30bf829b4eaede9408175a8536783587461d2210ec9008839bfa7b7",
+    "stockfishIntegrity": "sha512-bTwsO4e9HAwPBKls1+szcfibmaWRNzTF20rQE/XPdB3LOSoT6XTZDr1zYwriwSRRFT5MkvqrglPmJrKEVXGnyQ=="
+  },
+  "base": "/kingmaker-demo/",
+  "stockfish": {
+    "package": "stockfish",
+    "version": "19.0.1",
+    "variant": "Lite Single-Threaded",
+    "sourceCommit": "0d5dd7944f88c817c07a26bc4fb1905d5f9c46d6",
+    "sourceTag": "v19.0.1",
+    "binaries": [
+      {
+        "file": "stockfish-19-lite-single.js",
+        "bytes": 28230,
+        "sha256": "ccb130d7ff29408531c47d859a49f91d59d4f482d05a53eb1a3231a4f624c91a",
+        "upstreamBinary": "https://github.com/nmrugg/stockfish.js/releases/download/v19.0.1/stockfish-19-lite-single.js"
+      },
+      {
+        "file": "stockfish-19-lite-single.wasm",
+        "bytes": 1845971,
+        "sha256": "ee4f115bdb2d32cadf96cada104a05b5ec257d7ad6f57582190b49bc71f096de",
+        "upstreamBinary": "https://github.com/nmrugg/stockfish.js/releases/download/v19.0.1/stockfish-19-lite-single.wasm"
+      }
+    ],
+    "network": {
+      "file": "nn-61e7af4bb97d.nnue",
+      "source": "https://tests.stockfishchess.org/api/nn/nn-61e7af4bb97d.nnue",
+      "bytes": 1166381,
+      "sha256": "61e7af4bb97d51eeeb25d322916f86513b5cd3a827ce189c98c6e31946f99e5b"
+    }
+  },
+  "sourceAccess": {
+    "status": "passed",
+    "sourceCommit": "0d5dd7944f88c817c07a26bc4fb1905d5f9c46d6",
+    "tag": "v19.0.1",
+    "downloads": [
+      {
+        "kind": "source-archive",
+        "url": "https://codeload.github.com/nmrugg/stockfish.js/tar.gz/0d5dd7944f88c817c07a26bc4fb1905d5f9c46d6",
+        "sha256": "e5289a920554bf0069a6601c228e81d957c00522bb31c4343588dc5d7d251879",
+        "bytes": 426352,
+        "requiredSourceFiles": [
+          "README.md",
+          "Copying.txt",
+          "build.js",
+          "package.json",
+          "src/evaluate.h",
+          "src/Makefile",
+          "src/emscripten/wasm-makefile.mk",
+          "src/emscripten/pre.js",
+          "scripts/net.sh",
+          "scripts/prepack.js"
+        ]
+      },
+      {
+        "kind": "binary",
+        "url": "https://github.com/nmrugg/stockfish.js/releases/download/v19.0.1/stockfish-19-lite-single.js",
+        "sha256": "ccb130d7ff29408531c47d859a49f91d59d4f482d05a53eb1a3231a4f624c91a",
+        "bytes": 28230
+      },
+      {
+        "kind": "binary",
+        "url": "https://github.com/nmrugg/stockfish.js/releases/download/v19.0.1/stockfish-19-lite-single.wasm",
+        "sha256": "ee4f115bdb2d32cadf96cada104a05b5ec257d7ad6f57582190b49bc71f096de",
+        "bytes": 1845971
+      },
+      {
+        "kind": "nnue-build-input",
+        "url": "https://tests.stockfishchess.org/api/nn/nn-61e7af4bb97d.nnue",
+        "sha256": "61e7af4bb97d51eeeb25d322916f86513b5cd3a827ce189c98c6e31946f99e5b",
+        "bytes": 1166381
+      }
+    ],
+    "compiledUpstreamLocally": false,
+    "upstreamLockfilePresent": false,
+    "upstreamTerserVersion": "=5.51.2"
+  },
+  "reproducibility": {
+    "verified": true,
+    "method": "two consecutive builds, identical complete path/size/SHA-256 inventories",
+    "scope": "demo output under the pinned Node/npm/lockfile; upstream binary compilation not reproduced"
+  },
+  "validation": {
+    "mandatory": "passed",
+    "privateSuite": {
+      "passed": 119,
+      "failed": 0,
+      "skipped": 0,
+      "flaky": 0
+    },
+    "subpathSuite": {
+      "passed": 21,
+      "failed": 0,
+      "skipped": 0,
+      "flaky": 0
+    },
+    "browsers": [
+      {
+        "browser": "chromium",
+        "version": "156.0.8078.4",
+        "playwright": "1.64.1",
+        "executed": true,
+        "scope": "complete production-subpath suite"
+      },
+      {
+        "browser": "firefox",
+        "version": "157.0",
+        "playwright": "1.64.1",
+        "executed": true,
+        "scope": "production-subpath smoke only"
+      }
+    ],
+    "steps": [
+      {
+        "command": [
+          "npm",
+          "ci",
+          "--include=dev"
+        ],
+        "status": "passed"
+      },
+      {
+        "command": [
+          "npm",
+          "run",
+          "format:check"
+        ],
+        "status": "passed"
+      },
+      {
+        "command": [
+          "npm",
+          "run",
+          "test"
+        ],
+        "status": "passed"
+      },
+      {
+        "command": [
+          "npm",
+          "run",
+          "typecheck"
+        ],
+        "status": "passed"
+      },
+      {
+        "command": [
+          "npm",
+          "run",
+          "build"
+        ],
+        "status": "passed"
+      },
+      {
+        "command": [
+          "npm",
+          "run",
+          "test:e2e"
+        ],
+        "status": "passed"
+      },
+      {
+        "command": [
+          "npm",
+          "run",
+          "director:report"
+        ],
+        "status": "passed"
+      },
+      {
+        "command": [
+          "python3",
+          "scripts/verify-stockfish-source.py"
+        ],
+        "status": "passed"
+      },
+      {
+        "command": [
+          "npm",
+          "run",
+          "build:demo"
+        ],
+        "status": "passed"
+      },
+      {
+        "command": [
+          "npm",
+          "run",
+          "build:demo"
+        ],
+        "status": "passed"
+      },
+      {
+        "command": [
+          "npm",
+          "run",
+          "test:release"
+        ],
+        "status": "passed"
+      },
+      {
+        "command": [
+          "npm",
+          "run",
+          "audit:demo"
+        ],
+        "status": "passed"
+      },
+      {
+        "command": [
+          "npm",
+          "run",
+          "test:demo"
+        ],
+        "status": "passed"
+      },
+      {
+        "command": [
+          "npx",
+          "playwright",
+          "test",
+          "--config",
+          "playwright.demo.config.ts",
+          "--project=firefox",
+          "--grep",
+          "cross-browser release smoke"
+        ],
+        "status": "passed"
+      }
+    ],
+    "optionalBrowsers": [
+      "firefox"
+    ],
+    "unexecutedBrowsers": [
+      "webkit"
+    ]
+  },
+  "files": [
+    {
+      "path": ".nojekyll",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1722,
+      "sha256": "d8341deceec1f5e4e08cf20be1bd8249888c2d4ccb8ca71cce9eb5e5024687f2"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "bytes": 145908,
+      "sha256": "2270887c690d67f7ab6763e495adad0f8066121ebd7988c27f7bd1832eaec510"
+    },
+    {
+      "path": "assets/index-CCkXdM-N.js",
+      "bytes": 417426,
+      "sha256": "44580039f0e16bdc7f907ba877cbacf9a162315b114198cfbd5745609af06223"
+    },
+    {
+      "path": "assets/index-DRHNZuii.css",
+      "bytes": 49716,
+      "sha256": "2492b3c5a93ccb80273697555fe14d175906ca1f65c08dfbf9d35c4cfe2a2fe4"
+    },
+    {
+      "path": "audio/sfx/arrival.wav",
+      "bytes": 15038,
+      "sha256": "ee35a2ce4d0434f5b2cb57cf153784455b66f6ced8ee3e3f6582672e01e92139"
+    },
+    {
+      "path": "audio/sfx/capture.wav",
+      "bytes": 22094,
+      "sha256": "c482ad6299f43a51fc19b7f7af1c3ca253f3869fef375aba9a914138e57a9b26"
+    },
+    {
+      "path": "audio/sfx/castle.wav",
+      "bytes": 22094,
+      "sha256": "14e98f6b0afe450661701335cded155588b0497b991fff7d76c5ca9f6ec083bb"
+    },
+    {
+      "path": "audio/sfx/check.wav",
+      "bytes": 24740,
+      "sha256": "a3ee0c6eb64f0aba5cb6da73aa6c946921f5653a13212f6b3088fcb7179217d5"
+    },
+    {
+      "path": "audio/sfx/confirm.wav",
+      "bytes": 7100,
+      "sha256": "8718113bb900ac43071d968e6bfa4b25fb586a28d0e48783ece7e9c0b5b5759e"
+    },
+    {
+      "path": "audio/sfx/major-elliot.wav",
+      "bytes": 29150,
+      "sha256": "28a48c3d0cd82fcec2d085f007ceac40f63ba1839510498e7df327361d6faea6"
+    },
+    {
+      "path": "audio/sfx/major-verness.wav",
+      "bytes": 29150,
+      "sha256": "68bf08926c9d205bd6d803503713b66f6ed3e401cfe252592502ced65a99e658"
+    },
+    {
+      "path": "audio/sfx/manifest.json",
+      "bytes": 1350,
+      "sha256": "720104ade7f8106782f9cbdde135c2cd3e5db1404c07d7f469125b3ba249d331"
+    },
+    {
+      "path": "audio/sfx/move.wav",
+      "bytes": 12392,
+      "sha256": "d6818418a8c044bafe8e824b440f584102968b1565887a16439b3831bca97335"
+    },
+    {
+      "path": "audio/sfx/promotion.wav",
+      "bytes": 38852,
+      "sha256": "f95a5bdc7293b54b944c01369a4c8f64c832f9420630f58ad86dafdbd24b9342"
+    },
+    {
+      "path": "audio/sfx/select.wav",
+      "bytes": 4896,
+      "sha256": "44808aef4ee1a4e8e2c3a656a0864fd71ecf300c3d615c4fad624e1c1b08ac63"
+    },
+    {
+      "path": "audio/sfx/stinger.wav",
+      "bytes": 40616,
+      "sha256": "c86ecf58466c5fbb5c80bff000fca1385d3691da94364d6dfb7826b487c574f5"
+    },
+    {
+      "path": "characters/count_verness/expressions/breakthrough.webp",
+      "bytes": 273220,
+      "sha256": "facb35883a4aa8bcc5d9cd1eab561738d2d4e1a7dc6931e07c52025f079bc2f9"
+    },
+    {
+      "path": "characters/count_verness/expressions/confident.webp",
+      "bytes": 256450,
+      "sha256": "54631536944bdce309d4292899acef691e08c3a38e20dcad773729c93a253a72"
+    },
+    {
+      "path": "characters/count_verness/expressions/defeated.webp",
+      "bytes": 264026,
+      "sha256": "7a983bd49ca97b393800d1de7bd4ac9b6f0322932cc5f52331a2b7e6e3190621"
+    },
+    {
+      "path": "characters/count_verness/expressions/neutral.webp",
+      "bytes": 284702,
+      "sha256": "0c18d3d924ecb063e60b582d6f7ac326bbe084b91a32228d3bbf8f181d54de1d"
+    },
+    {
+      "path": "characters/count_verness/expressions/pressured.webp",
+      "bytes": 265310,
+      "sha256": "87e4cf6a870a467ea096c4201f0abf9db21e1ba21b596839dac7ea19e407c27b"
+    },
+    {
+      "path": "characters/count_verness/expressions/shocked.webp",
+      "bytes": 261322,
+      "sha256": "6d53918dd054e68dd2dd23c7cd471f78c4d9f5e940d58fd7374feaeb95ceebed"
+    },
+    {
+      "path": "characters/count_verness/expressions/thinking.webp",
+      "bytes": 255436,
+      "sha256": "4362881ed1c9d93e0544814ac499e91b84fe28beb8a24bf79bb132c14d06e75d"
+    },
+    {
+      "path": "characters/count_verness/expressions/triumphant.webp",
+      "bytes": 266380,
+      "sha256": "df711fd7f5a5c979bfea5c751ebf8c8a717ce98fcc2ad649008aafdbf507b199"
+    },
+    {
+      "path": "characters/count_verness/stingers/cracked_crown.webp",
+      "bytes": 375672,
+      "sha256": "23e09bb5483498e728d72f337ba30332ff2fbc0326756d335938894a2692b6b8"
+    },
+    {
+      "path": "characters/count_verness/stingers/sovereigns_verdict.webp",
+      "bytes": 304156,
+      "sha256": "1b895cf6cb980f125e8c5331074d9e8266ae50af5dcd654fa46c33a5a0277231"
+    },
+    {
+      "path": "characters/elliot_castle/expressions/breakthrough.webp",
+      "bytes": 239570,
+      "sha256": "4256990b0ab79364bc80fb990be6e9c21a632448db3394f2e5cd2e7a676734d1"
+    },
+    {
+      "path": "characters/elliot_castle/expressions/confident.webp",
+      "bytes": 231500,
+      "sha256": "b9c44cfe922c2dd9a6fc526a03cd033a793e8630c47ff19c215d32693609184c"
+    },
+    {
+      "path": "characters/elliot_castle/expressions/defeated.webp",
+      "bytes": 216574,
+      "sha256": "4bb57b3d0bb542dfd4aee637a26adb119bf9355391524ba9a5d2cd842312d208"
+    },
+    {
+      "path": "characters/elliot_castle/expressions/neutral.webp",
+      "bytes": 236916,
+      "sha256": "a997f193c4e39508f010f906368d99a4e46b3a2a2d383246d1d1306c209788f9"
+    },
+    {
+      "path": "characters/elliot_castle/expressions/pressured.webp",
+      "bytes": 226070,
+      "sha256": "5ae41d35c76e7a528dd5f4928aa739eb0d556b059c2ff90ea4d0db37142538d6"
+    },
+    {
+      "path": "characters/elliot_castle/expressions/shocked.webp",
+      "bytes": 243534,
+      "sha256": "1843dfe177f2262088a7c4bfd59e8de015218a50b22020d73e5f6dc233d28503"
+    },
+    {
+      "path": "characters/elliot_castle/expressions/thinking.webp",
+      "bytes": 211312,
+      "sha256": "a328cc5523678cc6713b12236c91acedea99cb2d6f83eb7818d56ccae640f9cd"
+    },
+    {
+      "path": "characters/elliot_castle/expressions/triumphant.webp",
+      "bytes": 255212,
+      "sha256": "dea8448f413b69efe496f71658d1951c1b02d0ec8bf9e9009afe7a335764219b"
+    },
+    {
+      "path": "characters/elliot_castle/stingers/moment_of_clarity.webp",
+      "bytes": 301236,
+      "sha256": "fa3a5aa0f0e5c51872b4eb5b91cda8586b97668a433c9c2a4ba6dfd26d2e7313"
+    },
+    {
+      "path": "demo/duel-background.png",
+      "bytes": 2257719,
+      "sha256": "65e81af4e915ae8c7b3c8b40804c94b11af555564d326a16041bf2c109d90d02"
+    },
+    {
+      "path": "demo/kingmaker-logo.png",
+      "bytes": 1748740,
+      "sha256": "f71534b485e335566fc99062ea2b705631df16db3e79b88243dc7641f376bd92"
+    },
+    {
+      "path": "demo/title-background.png",
+      "bytes": 2001069,
+      "sha256": "5da9a458cbf904820cf7328b8dab6ae2b7a839fe3c4ed0857b39d87c97c6d40a"
+    },
+    {
+      "path": "engine/COPYING.txt",
+      "bytes": 35821,
+      "sha256": "0b383d5a63da644f628d99c33976ea6487ed89aaa59f0b3257992deac1171e6b"
+    },
+    {
+      "path": "engine/SOURCE.txt",
+      "bytes": 3489,
+      "sha256": "6922a6dc15148c05cb4cf1878a3b12159485ae05418a286b8132942fdcf2969c"
+    },
+    {
+      "path": "engine/manifest.json",
+      "bytes": 251,
+      "sha256": "e46784479fe955307518c59996f06ae6224f2f3cb216598e5a5d40032fe9c949"
+    },
+    {
+      "path": "engine/stockfish-19-lite-single.js",
+      "bytes": 28230,
+      "sha256": "ccb130d7ff29408531c47d859a49f91d59d4f482d05a53eb1a3231a4f624c91a"
+    },
+    {
+      "path": "engine/stockfish-19-lite-single.wasm",
+      "bytes": 1845971,
+      "sha256": "ee4f115bdb2d32cadf96cada104a05b5ec257d7ad6f57582190b49bc71f096de"
+    },
+    {
+      "path": "ident/mnemonicware-ident.js",
+      "bytes": 10315,
+      "sha256": "317d6a5207409995ddb114c2fe7737208e4192d7602983be7ebf7947ddd4be0c"
+    },
+    {
+      "path": "index.html",
+      "bytes": 531,
+      "sha256": "347b99db1fe16aaaccd1b3a5e8630a6bf00137ca883c0245cb5159859845c056"
+    },
+    {
+      "path": "licenses/chess.js.txt",
+      "bytes": 1315,
+      "sha256": "0b3a3c2b4432a26bb18f9d06f5bba4de015bcc980306b7db28b06025495e2186"
+    },
+    {
+      "path": "licenses/react-dom.txt",
+      "bytes": 1088,
+      "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+    },
+    {
+      "path": "licenses/react.txt",
+      "bytes": 1088,
+      "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+    },
+    {
+      "path": "licenses/scheduler.txt",
+      "bytes": 1088,
+      "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+    },
+    {
+      "path": "licenses/vite.txt",
+      "bytes": 101176,
+      "sha256": "a77a1c089806b39ad339535bdf3677f636c91d96693e8ad7b11fe733f650ea64"
+    },
+    {
+      "path": "music/elliot/not_yet.mp3",
+      "bytes": 2837810,
+      "sha256": "098bafe2852f22675529dde88af8d782e910e8cbc302b9bff61bc8b4995d6b00"
+    },
+    {
+      "path": "music/elliot/one_more_move.mp3",
+      "bytes": 3711589,
+      "sha256": "873b0c20573115bdffc69d04e0e345929788834e70d1b1e1c6d7d40923c21634"
+    },
+    {
+      "path": "music/elliot/the_opening.mp3",
+      "bytes": 4055379,
+      "sha256": "b114c3972db4e3ac5a14b5d60c45b425e23f1f77102723cf5ff3b68bed3282a6"
+    },
+    {
+      "path": "music/results/defeat.mp3",
+      "bytes": 4084865,
+      "sha256": "087145d7d6097564c6696e3248ab7b42ae93610c122da29842c4aae76ca42939"
+    },
+    {
+      "path": "music/results/victory.mp3",
+      "bytes": 3360369,
+      "sha256": "41a85fb7f5fcc58bdc960b54b520265ef0f23f2a05ec4cf0b8d9c2e2a253a879"
+    },
+    {
+      "path": "music/title/title.mp3",
+      "bytes": 4170922,
+      "sha256": "4130ab5819055aec80fc9c36520f3d24300d18f25f9e23a6f4e03c6e4c44fda0"
+    },
+    {
+      "path": "pieces/royal-anime/black-b.webp",
+      "bytes": 10676,
+      "sha256": "4dd791a79bc84873cee080cb3cc913a352b4d1c6774339d40feab8ac758a50f5"
+    },
+    {
+      "path": "pieces/royal-anime/black-k.webp",
+      "bytes": 13416,
+      "sha256": "09fa699a7eafdb86aad40c64e039c34d2b2c861018132dc61bcac5fc3d9c4925"
+    },
+    {
+      "path": "pieces/royal-anime/black-n.webp",
+      "bytes": 13984,
+      "sha256": "589a13464fd3de0ccce24068f7d88702c975d032fe1a608190bef21c3e0e9afa"
+    },
+    {
+      "path": "pieces/royal-anime/black-p.webp",
+      "bytes": 8280,
+      "sha256": "956b6b3085ac8e4a1183dd0be6979fb0d0cb159d6ea474d066bd497babc1d9a5"
+    },
+    {
+      "path": "pieces/royal-anime/black-q.webp",
+      "bytes": 13618,
+      "sha256": "25ec2002d99b6814712aa7c508c548e6f9b835dc94c6b7a44d7d16248d06b826"
+    },
+    {
+      "path": "pieces/royal-anime/black-r.webp",
+      "bytes": 10798,
+      "sha256": "2dfef76439cda48d62d30b1363049903ac816c8ca3555224c2336fcfd86cd830"
+    },
+    {
+      "path": "pieces/royal-anime/white-b.webp",
+      "bytes": 11396,
+      "sha256": "ede3a2b8f190b993b7d5578c2fab8312d5d1b78df4f00af02c7ce286ac20e00a"
+    },
+    {
+      "path": "pieces/royal-anime/white-k.webp",
+      "bytes": 13404,
+      "sha256": "30ad7b321a750c6e67f600335568cb92786ed3abebd77b295c673af849368899"
+    },
+    {
+      "path": "pieces/royal-anime/white-n.webp",
+      "bytes": 17128,
+      "sha256": "2336e3d6b3d74cb28079439d0f0c8c4415d2356f616e4ec9221982214217be31"
+    },
+    {
+      "path": "pieces/royal-anime/white-p.webp",
+      "bytes": 9984,
+      "sha256": "d2c1459f43ae492a1e26c5cd5775e362e21bdc5765c42d5a006ca99e09f03d27"
+    },
+    {
+      "path": "pieces/royal-anime/white-q.webp",
+      "bytes": 14778,
+      "sha256": "d7b9727a10fbe88846cd1cc8ef029fdd7d119eb4504ec4c955d2ee6d8c01504a"
+    },
+    {
+      "path": "pieces/royal-anime/white-r.webp",
+      "bytes": 12154,
+      "sha256": "4ff9a1beaaa1db63823f8c9109dde23f4c35f4ecd6611dc39f85fe5d1dca1edd"
+    }
+  ],
+  "inventoryExcludes": [
+    "RELEASE_MANIFEST.json (self-reference)"
+  ],
+  "totalBytes": 36239283,
+  "artifactChecksum": {
+    "location": "separate PREPARED_RELEASE.json and SHA256SUMS",
+    "reason": "the archive cannot contain its own checksum without circular hashing"
+  },
+  "publication": {
+    "performed": false,
+    "authorized": false,
+    "targetRepository": "mnemonicpunk/kingmaker-demo",
+    "remainingApproval": "Owner GPL separate-works/legal release decision; no technical legal certification"
+  }
+}

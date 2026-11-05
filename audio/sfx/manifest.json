@@ -1,0 +1,68 @@
+[
+  {
+    "id": "move",
+    "src": "/audio/sfx/move.wav",
+    "durationMs": 140,
+    "peak": 0.3901791436506241
+  },
+  {
+    "id": "capture",
+    "src": "/audio/sfx/capture.wav",
+    "durationMs": 250,
+    "peak": 0.47999511703848385
+  },
+  {
+    "id": "arrival",
+    "src": "/audio/sfx/arrival.wav",
+    "durationMs": 170,
+    "peak": 0.18277535325174718
+  },
+  {
+    "id": "check",
+    "src": "/audio/sfx/check.wav",
+    "durationMs": 280,
+    "peak": 0.15579699087496568
+  },
+  {
+    "id": "castle",
+    "src": "/audio/sfx/castle.wav",
+    "durationMs": 250,
+    "peak": 0.4499038666951506
+  },
+  {
+    "id": "promotion",
+    "src": "/audio/sfx/promotion.wav",
+    "durationMs": 440,
+    "peak": 0.1783196508682516
+  },
+  {
+    "id": "major-elliot",
+    "src": "/audio/sfx/major-elliot.wav",
+    "durationMs": 330,
+    "peak": 0.1533249916074099
+  },
+  {
+    "id": "major-verness",
+    "src": "/audio/sfx/major-verness.wav",
+    "durationMs": 330,
+    "peak": 0.24204229865413374
+  },
+  {
+    "id": "stinger",
+    "src": "/audio/sfx/stinger.wav",
+    "durationMs": 460,
+    "peak": 0.2794885097811823
+  },
+  {
+    "id": "confirm",
+    "src": "/audio/sfx/confirm.wav",
+    "durationMs": 80,
+    "peak": 0.09753715628528703
+  },
+  {
+    "id": "select",
+    "src": "/audio/sfx/select.wav",
+    "durationMs": 55,
+    "peak": 0.09051789910580767
+  }
+]

@@ -1,0 +1,53 @@
+Stockfish.js 19.0.1 — Stockfish 19 Lite Single-Threaded
+
+Distributed unchanged: stockfish-19-lite-single.js and stockfish-19-lite-single.wasm.
+JavaScript/WebAssembly port: Nathan Rugg, Chess.com and contributors.
+Stockfish C++ engine: Tord Romstad, Marco Costalba, Joona Kiiski,
+Gary Linscott and other Stockfish contributors. Lite network: Chris Bao (sscg13).
+License: GNU General Public License version 3; full text in COPYING.txt.
+Stockfish.js is a port/build project distinct from the original C++ Stockfish project.
+
+Exact corresponding-source tree and build scripts:
+https://github.com/nmrugg/stockfish.js/tree/0d5dd7944f88c817c07a26bc4fb1905d5f9c46d6
+Version tag: v19.0.1 (annotated tag resolves to the commit above).
+Download source archive:
+https://github.com/nmrugg/stockfish.js/archive/0d5dd7944f88c817c07a26bc4fb1905d5f9c46d6.tar.gz
+
+The source tree includes C++, emscripten glue, build.js, src/Makefile,
+src/emscripten/wasm-makefile.mk, scripts/net.sh and npm build scripts.
+The required lite network is a separate build input, not included in the source archive:
+https://tests.stockfishchess.org/api/nn/nn-61e7af4bb97d.nnue
+SHA-256: 61e7af4bb97d51eeeb25d322916f86513b5cd3a827ce189c98c6e31946f99e5b
+Size: 1166381 bytes. Place it in the downloaded source tree's src/ directory.
+If a cached signed download redirect fails, request the official URL with
+Cache-Control: no-cache and User-Agent: Mozilla/5.0; verify the full hash above.
+The upstream documented alternative network mirror returned 404 during verification;
+the official download above was successfully verified.
+
+Build directions (not needed to run this demo):
+1. Download/extract the exact source archive, or clone and checkout the full commit above.
+2. Install the upstream-pinned Emscripten 6.0.9 toolchain, Node/npm and make.
+3. Download/verify the exact network above into src/.
+4. The upstream tag has no npm lockfile. In its root run npm install --ignore-scripts
+   (the source package pins terser =5.51.2; upstream transitive build dependencies are not locked), then:
+   node build.js --single-threaded --lite --no-split --strict-em-check -f
+   (npm run build-single-lite is the upstream convenient equivalent.)
+5. Outputs are written under src/. Upstream scripts/prepack.js documents npm packaging.
+See the pinned README.md, build.js --help, Makefile and wasm-makefile.mk for platform prerequisites.
+
+Exact distributed binary hashes:
+JS: ccb130d7ff29408531c47d859a49f91d59d4f482d05a53eb1a3231a4f624c91a
+WASM: ee4f115bdb2d32cadf96cada104a05b5ec257d7ad6f57582190b49bc71f096de
+Both files were verified against stockfish@19.0.1 and the upstream v19.0.1 release.
+The demo does not modify the binaries or claim to have independently reproduced their compilation.
+
+Upstream C++ project: https://github.com/official-stockfish/Stockfish
+Official distribution guidance: https://stockfishchess.org/about/
+GPLv3: https://www.gnu.org/licenses/gpl-3.0.html (especially section 6(d)).
+
+The demo runs Stockfish as a separate Worker and exchanges standard UCI text messages.
+This describes technical separation, not a legal certification that the components
+constitute separate works. The project owner must resolve that release-approval issue
+before public distribution. Source access must be maintained while binaries are distributed;
+if the linked corresponding sources/network become unavailable, restore equivalent access
+or stop distributing the binaries. No email request or payment is needed for the source links.
